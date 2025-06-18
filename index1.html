@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velho Amigo - Conectando Voluntários a Idosos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Página Home (index) -->
+    <div id="home-page" class="page active-page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home-page')" class="active">Home</a>
+                <a href="#" onclick="showPage('volunteers-page')">Voluntários</a>
+                <a href="#" onclick="showPage('about-page')">Sobre</a>
+                <a href="#" onclick="showPage('requests-page')">Solicitações</a>
+                <a href="#" onclick="showPage('register-page')">Cadastre-se</a>
+                <a href="#" onclick="showPage('login-page')">Login</a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Conectando Voluntários a Idosos que Precisam de Ajuda</h1>
+                <p>Uma plataforma que facilita o encontro entre pessoas dispostas a ajudar e idosos que precisam de suporte em atividades do dia a dia.</p>
+                <a href="#" onclick="showPage('register-page')" class="btn">Tornar-se Voluntário</a>
+                <a href="#" onclick="showPage('register-page')" class="btn btn-outline">Cadastrar Lar de Idosos</a>
+            </div>
+        </section>
+
+        <section id="como-funciona">
+            <div class="container">
+                <h2 class="section-title">Como Funciona</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <i class="fas fa-home"></i>
+                        <h3>Lares de Idosos</h3>
+                        <p>Lares de idosos se cadastram na plataforma e registram os idosos que precisam de ajuda.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-tasks"></i>
+                        <h3>Criar Solicitações</h3>
+                        <p>Os lares criam solicitações de ajuda para atividades específicas, como conversas ou acompanhamento.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-hands"></i>
+                        <h3>Voluntários</h3>
+                        <p>Voluntários se cadastram, exploram as solicitações e escolhem onde querem ajudar.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Conectando Pessoas</h3>
+                        <p>A plataforma conecta voluntários a idosos, criando oportunidades de interação significativa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solicitacoes">
+            <div class="container">
+                <h2 class="section-title">Solicitações Disponíveis</h2>
+                <div class="requests-grid" id="home-requests">
+                    <!-- Solicitações serão carregadas por JS -->
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" onclick="showPage('requests-page')" class="btn">Ver Todas as Solicitações</a>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contato">
+            <div class="container">
+                <div class="footer-content">
+Joice, [16 de jun de 2025 às 18:14]
+<div class="footer-section">
+                        <h3>Sobre Nós</h3>
+                        <p>Voluntários de Idosos é uma plataforma que conecta pessoas dispostas a ajudar com idosos que precisam de suporte em atividades do dia a dia, promovendo interação social e bem-estar.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Links Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="#" onclick="showPage('home-page')">Home</a></li>
+                            <li><a href="#" onclick="showPage('volunteers-page')">Voluntários</a></li>
+                            <li><a href="#" onclick="showPage('about-page')">Sobre</a></li>
+                            <li><a href="#" onclick="showPage('register-page')">Cadastre-se</a></li>
+                            <li><a href="#" onclick="showPage('requests-page')">Solicitações</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contato</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-envelope"></i> contato@velhoamigo.org</li>
+                            <li><i class="fas fa-phone"></i> (11) 9999-9999</li>
+                            <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP - Brasil</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 Velho Amigo. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Página de Voluntários -->
+    <div id="volunteers-page" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home-page')">Home</a>
+                <a href="#" onclick="showPage('volunteers-page')" class="active">Voluntários</a>
+                <a href="#" onclick="showPage('about-page')">Sobre</a>
+                <a href="#" onclick="showPage('requests-page')">Solicitações</a>
+                <a href="#" onclick="showPage('register-page')">Cadastre-se</a>
+                <a href="#" onclick="showPage('login-page')">Login</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <a href="#" onclick="showPage('home-page')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar para Home
+                </a>
+
+                <h2 class="section-title">Voluntários Cadastrados</h2>
+
+                <div id="volunteers-list" class="requests-grid">
+                    <!-- Voluntários serão carregados via JavaScript -->
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" class="btn" onclick="generateCertificate()">Baixar Certificado de Horas</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página de Solicitações -->
+    <div id="requests-page" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home-page')">Home</a>
+                <a href="#" onclick="showPage('volunteers-page')">Voluntários</a>
+                <a href="#" onclick="showPage('about-page')">Sobre</a>
+                <a href="#" onclick="showPage('requests-page')" class="active">Solicitações</a>
+                <a href="#" onclick="showPage('register-page')">Cadastre-se</a>
+                <a href="#" onclick="showPage('login-page')">Login</a>
+            </div>
+        </header>
+Joice, [16 de jun de 2025 às 18:14]
+<section class="section">
+            <div class="container">
+                <a href="#" onclick="showPage('home-page')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar para Home
+                </a>
+                
+                <h2 class="section-title">Solicitações Disponíveis</h2>
+                <div class="requests-grid" id="requests-list">
+                    <!-- Solicitações serão carregadas por JS -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <p>Quer ajudar? <a href="#" onclick="showPage('register-page')">Cadastre-se como voluntário</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página de Cadastro -->
+    <div id="register-page" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home-page')">Home</a>
+                <a href="#" onclick="showPage('volunteers-page')">Voluntários</a>
+                <a href="#" onclick="showPage('about-page')">Sobre</a>
+                <a href="#" onclick="showPage('requests-page')">Solicitações</a>
+                <a href="#" onclick="showPage('register-page')" class="active">Cadastre-se</a>
+                <a href="#" onclick="showPage('login-page')">Login</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <a href="#" onclick="showPage('home-page')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar para Home
+                </a>
+                
+                <h2 class="section-title">Cadastre-se</h2>
+                
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <p>Já tem uma conta? <a href="#" onclick="showPage('login-page')">Faça login aqui</a></p>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="voluntario" onclick="setActiveTab('voluntario')">Sou Voluntário</button>
+                    <button class="tab-btn" data-tab="lar" onclick="setActiveTab('lar')">Sou um Lar de Idosos</button>
+                </div>
+                
+                <!-- Formulário Voluntário -->
+                <div id="voluntario-form" class="form-container">
+                    <form id="volunteer-form">
+                        <div id="register-alert"></div>
+                        <div class="form-group">
+                            <label for="nome-voluntario">Nome Completo</label>
+                            <input type="text" id="nome-voluntario" placeholder="Digite seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-voluntario">E-mail</label>
+                            <input type="email" id="email-voluntario" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone-voluntario">Telefone</label>
+                            <input type="tel" id="telefone-voluntario" placeholder="Digite seu telefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cidade-voluntario">Cidade</label>
+                            <input type="text" id="cidade-voluntario" placeholder="Digite sua cidade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="interesses">Áreas de Interesse</label>
+Joice, [16 de jun de 2025 às 18:14]
+<select id="interesses" multiple required>
+                                <option value="conversa">Conversa/Companhia</option>
+                                <option value="mercado">Acompanhamento ao Mercado</option>
+                                <option value="passeios">Passeios</option>
+                                <option value="leitura">Leitura</option>
+                                <option value="oficinas">Oficinas/Atividades</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="disponibilidade">Disponibilidade</label>
+                            <textarea id="disponibilidade" placeholder="Informe seus horários disponíveis" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha-voluntario">Senha</label>
+                            <input type="password" id="senha-voluntario" placeholder="Crie uma senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cadastrar como Voluntário</button>
+                    </form>
+                </div> 
+                
+                <!-- Formulário Lar de Idosos -->
+                <div id="lar-form" class="form-container" style="display: none;">
+                    <form id="nursing-home-form">
+                        <div id="register-alert-lar"></div>
+                        <div class="form-group">
+                            <label for="nome-lar">Nome do Lar de Idosos</label>
+                            <input type="text" id="nome-lar" placeholder="Digite o nome do lar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="responsavel">Nome do Responsável</label>
+                            <input type="text" id="responsavel" placeholder="Digite o nome do responsável" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cnpj">CNPJ</label>
+                            <input type="text" id="cnpj" placeholder="Digite o CNPJ" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-lar">E-mail</label>
+                            <input type="email" id="email-lar" placeholder="Digite o e-mail do lar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone-lar">Telefone</label>
+                            <input type="tel" id="telefone-lar" placeholder="Digite o telefone do lar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="endereco-lar">Endereço</label>
+                            <input type="text" id="endereco-lar" placeholder="Digite o endereço completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="idosos">Cadastro de Idosos</label>
+                            <textarea id="idosos" placeholder="Informe os nomes e necessidades dos idosos (um por linha)" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha-lar">Senha</label>
+                            <input type="password" id="senha-lar" placeholder="Crie uma senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Cadastrar Lar de Idosos</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+Joice, [16 de jun de 2025 às 18:14]
+<!-- Página de Login -->
+    <div id="login-page" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home-page')">Home</a>
+                <a href="#" onclick="showPage('volunteers-page')">Voluntários</a>
+                <a href="#" onclick="showPage('about-page')">Sobre</a>
+                <a href="#" onclick="showPage('requests-page')">Solicitações</a>
+                <a href="#" onclick="showPage('register-page')">Cadastre-se</a>
+                <a href="#" onclick="showPage('login-page')" class="active">Login</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <a href="#" onclick="showPage('home-page')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar para Home
+                </a>
+                
+                <div class="form-container" style="max-width: 500px;">
+                    <h2 class="section-title">Login</h2>
+                    <form id="login-form">
+                        <div id="login-alert"></div>
+                        <div class="form-group">
+                            <label for="login-email">E-mail</label>
+                            <input type="email" id="login-email" placeholder="Digite seu e-mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Senha</label>
+                            <input type="password" id="login-password" placeholder="Digite sua senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <div class="form-group" style="margin-top: 1rem; text-align: center;">
+                            <p>Não tem uma conta? <a href="#" onclick="showPage('register-page')">Cadastre-se</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Dashboard do Lar de Idosos -->
+    <div id="nursing-home-dashboard" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('nursing-home-dashboard')" class="active">Dashboard</a>
+                <a href="#" onclick="showPage('create-request-page')">Criar Solicitação</a>
+                <a href="#" onclick="showPage('elderly-management-page')">Gerenciar Idosos</a>
+                <a href="#" onclick="logout()">Sair</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <div style="text-align: right; margin-bottom: 1rem;">
+                    <a href="#" onclick="showPage('create-request-page')" class="btn">
+                        <i class="fas fa-plus"></i> Criar Nova Solicitação
+                    </a>
+                </div>
+                
+                <div class="profile-info">
+                    <div class="profile-avatar" id="nursing-home-avatar">L</div>
+                    <div class="profile-details">
+                        <h2 id="nursing-home-name">Lar dos Idosos Felizes</h2>
+                        <p id="nursing-home-contact">Responsável: João Silva | contato@laridosos.com</p>
+                        <p id="nursing-home-address">São Paulo, SP</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+Joice, [16 de jun de 2025 às 18:14]
+<h3><i class="fas fa-users"></i> Idosos Cadastrados</h3>
+                        <p id="elderly-count">12 idosos</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-tasks"></i> Solicitações Ativas</h3>
+                        <p id="active-requests">8 solicitações</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-check-circle"></i> Solicitações Concluídas</h3>
+                        <p id="completed-requests">24 solicitações</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-user-friends"></i> Voluntários Ativos</h3>
+                        <p id="active-volunteers">15 voluntários</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Solicitações Recentes</h3>
+                <div class="requests-grid" id="nursing-home-requests">
+                    <!-- Solicitações serão carregadas por JS -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" onclick="showPage('requests-page')">Ver todas as solicitações disponíveis</a>
+                </div>
+            </div>
+        </section>
+    </div> 
+
+    <!-- Dashboard do Voluntário -->
+    <div id="volunteer-dashboard" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('volunteer-dashboard')" class="active">Dashboard</a>
+                <a href="#" onclick="showPage('requests-page')">Solicitações</a>
+                <a href="#" onclick="showPage('volunteer-requests-page')">Minhas Atividades</a>
+                <a href="#" onclick="logout()">Sair</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <div class="profile-info">
+                    <div class="profile-avatar" id="volunteer-avatar">V</div>
+                    <div class="profile-details">
+                        <h2 id="volunteer-name">Ana Silva</h2>
+                        <p id="volunteer-contact">ana@email.com | (11) 99999-9999</p>
+                        <p id="volunteer-location">São Paulo, SP</p>
+                        <p id="volunteer-availability">Disponibilidade: Finais de semana</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-hands-helping"></i> Atividades Realizadas</h3>
+                        <p id="completed-activities">15 atividades</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-clock"></i> Horas Voluntárias</h3>
+                        <p id="volunteer-hours">42 horas</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-star"></i> Avaliação Média</h3>
+                        <p id="volunteer-rating">4.8/5.0</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-calendar-check"></i> Próximas Atividades</h3>
+                        <p id="upcoming-activities">3 atividades</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Solicitações Recomendadas</h3>
+                <div class="requests-grid" id="volunteer-recommended-requests">
+Joice, [16 de jun de 2025 às 18:14]
+<!-- Solicitações serão carregadas por JS -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="#" onclick="showPage('requests-page')" class="btn">Ver Mais Solicitações</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página de Criação de Solicitação -->
+    <div id="create-request-page" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('nursing-home-dashboard')">Dashboard</a>
+                <a href="#" onclick="showPage('create-request-page')" class="active">Criar Solicitação</a>
+                <a href="#" onclick="showPage('elderly-management-page')">Gerenciar Idosos</a>
+                <a href="#" onclick="logout()">Sair</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <a href="#" onclick="showPage('nursing-home-dashboard')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar para Dashboard
+                </a>
+                
+                <h2 class="section-title">Criar Nova Solicitação</h2>
+                <div class="form-container">
+                    <form id="request-form">
+                        <div id="request-alert"></div>
+                        <div class="form-group">
+                            <label for="request-elderly">Idoso</label>
+                            <select id="request-elderly" required>
+                                <option value="">Selecione um idoso</option>
+                                <option value="maria">Dona Maria (78 anos)</option>
+                                <option value="joao">Seu João (82 anos)</option>
+                                <option value="clara">Dona Clara (85 anos)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-type">Tipo de Solicitação</label>
+                            <select id="request-type" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="conversa">Conversa/Companhia</option>
+                                <option value="mercado">Acompanhamento ao Mercado</option>
+                                <option value="passeio">Passeio</option>
+                                <option value="leitura">Leitura</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-description">Descrição</label>
+                            <textarea id="request-description" placeholder="Descreva a atividade necessária" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-duration">Duração Estimada (horas)</label>
+                            <input type="number" id="request-duration" min="0.5" max="8" step="0.5" value="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="request-date">Data e Hora</label>
+                            <input type="datetime-local" id="request-date" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Criar Solicitação</button>
+                    </form>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <p>Precisa adicionar um novo idoso? <a href="#" onclick="showPage('elderly-management-page')">Gerenciar idosos</a></p>
+                </div>
+            </div>
+        </section>
+    </div>
+Joice, [16 de jun de 2025 às 18:14]
+<!-- Página Sobre -->
+    <div id="about-page" class="page">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hands-helping"></i>
+                <span>Velho Amigo</span>
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home-page')">Home</a>
+                <a href="#" onclick="showPage('volunteers-page')">Voluntários</a>
+                <a href="#" onclick="showPage('about-page')" class="active">Sobre</a>
+                <a href="#" onclick="showPage('requests-page')">Solicitações</a>
+                <a href="#" onclick="showPage('register-page')">Cadastre-se</a>
+                <a href="#" onclick="showPage('login-page')">Login</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <div class="container">
+                <a href="#" onclick="showPage('home-page')" class="back-button">
+                    <i class="fas fa-arrow-left"></i> Voltar para Home
+                </a>
+                
+                <h2 class="section-title">Sobre o Velho Amigo</h2>
+                
+                <div style="text-align: center; margin: 2rem 0;">
+                    <a href="#" onclick="showPage('register-page')" class="btn" style="margin-right: 10px;">
+                        Cadastrar meu Lar
+                    </a>
+                    <a href="#" onclick="showPage('register-page')" class="btn btn-outline" style="background: var(--secondary); color: var(--dark);">
+                        Tornar-me Voluntário
+                    </a>
+                </div>
+                
+                <div class="feature-card">
+                    <p>O Velho Amigo é uma plataforma inovadora que conecta voluntários a idosos que precisam de ajuda em atividades cotidianas. Nosso objetivo é combater a solidão e promover uma vida mais ativa e saudável para idosos institucionalizados.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Nossa Missão</h3>
+                    <p>Reduzir a solidão de idosos em lares de longa permanência, facilitando conexões significativas com voluntários da comunidade.</p>
+                    
+                    <h3 style="margin-top: 2rem;">Como Funciona</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 1rem;">
+                        <li>Lares de idosos se cadastram na plataforma</li>
+                        <li>Criam solicitações de ajuda para seus residentes</li>
+                        <li>Voluntários se cadastram e escolhem solicitações</li>
+                        <li>As atividades são realizadas e registradas</li>
+                    </ol>
+                    
+                    <h3 style="margin-top: 2rem;">Benefícios</h3>
+                    <div class="features" style="margin-top: 1rem;">
+                        <div class="feature-card">
+                            <i class="fas fa-smile"></i>
+                            <h4>Para Idosos</h4>
+                            <p>Companhia, ajuda prática e redução da solidão</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-hands-helping"></i>
+                            <h4>Para Voluntários</h4>
+                            <p>Oportunidade de ajudar, experiência significativa</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-home"></i>
+                            <h4>Para Lares</h4>
+                            <p>Melhor gestão de voluntários e atendimento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
